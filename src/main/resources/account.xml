@@ -5,7 +5,7 @@
 
 <struts>
     <package name="default" extends="struts-default">
-        <action name="login" class="name.dohkoos.account.action.LoginAction">
+        <action name="login" class="loginAction">
             <result name="success">/index.jsp</result>
             <result name="input">/index.jsp</result>
         </action>
