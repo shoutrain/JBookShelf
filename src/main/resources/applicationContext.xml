@@ -38,4 +38,8 @@
     <bean id="loginAction" class="name.dohkoos.account.action.LoginAction" scope="prototype">
         <property name="userService" ref="userService" />
     </bean>
+
+    <bean id="registerAction" class="name.dohkoos.account.action.RegisterAction" scope="prototype">
+        <property name="userService" ref="userService" />
+    </bean>
 </beans>
