@@ -54,23 +54,7 @@
         <property name="bookDao" ref="bookDao" />
     </bean>
 
-    <bean id="listBookAction" class="name.dohkoos.book.action.ListBookAction" scope="prototype">
-        <property name="bookService" ref="bookService" />
-    </bean>
-
-    <bean id="showBookAction" class="name.dohkoos.book.action.ShowBookAction" scope="prototype">
-        <property name="bookService" ref="bookService" />
-    </bean>
-
-    <bean id="addBookAction" class="name.dohkoos.book.action.AddBookAction" scope="prototype">
-        <property name="bookService" ref="bookService" />
-    </bean>
-
-    <bean id="editBookAction" class="name.dohkoos.book.action.EditBookAction" scope="prototype">
-        <property name="bookService" ref="bookService" />
-    </bean>
-
-    <bean id="deleteBookAction" class="name.dohkoos.book.action.DeleteBookAction" scope="prototype">
+    <bean id="bookAction" class="name.dohkoos.book.action.BookAction" scope="prototype">
         <property name="bookService" ref="bookService" />
     </bean>
 </beans>

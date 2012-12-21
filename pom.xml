@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>name.dohkoos</groupId>
     <artifactId>jbookstore</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.9</version>
     <packaging>war</packaging>
 
     <properties>
