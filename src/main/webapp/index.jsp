@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JBookStore</title>
+<title>JBookShelf</title>
 </head>
 
 <body>

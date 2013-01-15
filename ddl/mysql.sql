@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS jbookstore;
+CREATE DATABASE IF NOT EXISTS jbookshelf;
 
-USE jbookstore;
+USE jbookshelf;
 
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS books;
