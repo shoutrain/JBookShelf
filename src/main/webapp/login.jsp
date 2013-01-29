@@ -10,7 +10,12 @@
 </head>
 
 <body>
-    <p>User: test/123456</p>
+    <p>
+        User: <br />
+        test/123456<br />
+        foo/123456<br />
+        bar/123456
+    </p>
     <s:form action="login">
         <s:textfield name="username" label="Username" />
         <s:password name="password" label="Password" />
