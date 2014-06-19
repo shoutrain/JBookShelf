@@ -4,28 +4,29 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
-    <constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="true" />
 
-    <package name="default" extends="struts-default">
-        <interceptors>
-            <interceptor name="authorization" class="name.dohkoos.account.interceptor.AuthorizationInterceptor" />
+	<package name="default" extends="struts-default">
+		<interceptors>
+			<interceptor name="authorization"
+				class="com.goo.training.ssh.jbs.account.interceptor.AuthorizationInterceptor" />
 
-            <interceptor-stack name="authorizationStack">
-                <interceptor-ref name="authorization">
-                    <param name="skipActions">login, logout, register</param>
-                </interceptor-ref>
-                <interceptor-ref name="defaultStack" />
-            </interceptor-stack>
-        </interceptors>
+			<interceptor-stack name="authorizationStack">
+				<interceptor-ref name="authorization">
+					<param name="skipActions">login, logout, register</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
 
-        <default-interceptor-ref name="authorizationStack" />
+		<default-interceptor-ref name="authorizationStack" />
 
-        <global-results>
-            <result name="login" type="redirectAction">login!input</result>
-        </global-results>
-    </package>
+		<global-results>
+			<result name="login" type="redirectAction">login!input</result>
+		</global-results>
+	</package>
 
-    <include file="account.xml" />
-    <include file="book.xml" />
+	<include file="account.xml" />
+	<include file="book.xml" />
 </struts>

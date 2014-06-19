@@ -1,60 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/jbookshelf?useUnicode=true&amp;characterEncoding=UTF-8" />
-        <property name="username" value="root" />
-        <property name="password" value="123456" />
-    </bean>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/jbookshelf?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
 
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.connection.pool_size">1</prop>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</prop>
-                <prop key="hibernate.show_sql">true</prop>
-            </props>
-        </property>
-        <property name="mappingResources">
-            <list>
-                <value>name/dohkoos/account/model/User.hbm.xml</value>
-                <value>name/dohkoos/book/model/Book.hbm.xml</value>
-            </list>
-        </property>
-    </bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.connection.pool_size">1</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/goo/training/ssh/jbs/account/model/User.hbm.xml</value>
+				<value>com/goo/training/ssh/jbs/book/model/Book.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
 
-    <!-- account -->
-    <bean id="userDao" class="name.dohkoos.account.dao.UserDao">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
+	<!-- account -->
+	<bean id="userDao" class="com.goo.training.ssh.jbs.account.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
-    <bean id="userService" class="name.dohkoos.account.service.UserService">
-        <property name="userDao" ref="userDao" />
-    </bean>
+	<bean id="userService" class="com.goo.training.ssh.jbs.account.service.UserService">
+		<property name="userDao" ref="userDao" />
+	</bean>
 
-    <bean id="loginAction" class="name.dohkoos.account.action.LoginAction" scope="prototype">
-        <property name="userService" ref="userService" />
-    </bean>
+	<bean id="loginAction" class="com.goo.training.ssh.jbs.account.action.LoginAction"
+		scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
 
-    <bean id="registerAction" class="name.dohkoos.account.action.RegisterAction" scope="prototype">
-        <property name="userService" ref="userService" />
-    </bean>
+	<bean id="registerAction" class="com.goo.training.ssh.jbs.account.action.RegisterAction"
+		scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
 
-    <!-- book -->
-    <bean id="bookDao" class="name.dohkoos.book.dao.BookDao">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
+	<!-- book -->
+	<bean id="bookDao" class="com.goo.training.ssh.jbs.book.dao.BookDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
-    <bean id="bookService" class="name.dohkoos.book.service.BookService">
-        <property name="bookDao" ref="bookDao" />
-    </bean>
+	<bean id="bookService" class="com.goo.training.ssh.jbs.book.service.BookService">
+		<property name="bookDao" ref="bookDao" />
+	</bean>
 
-    <bean id="bookAction" class="name.dohkoos.book.action.BookAction" scope="prototype">
-        <property name="bookService" ref="bookService" />
-    </bean>
+	<bean id="bookAction" class="com.goo.training.ssh.jbs.book.action.BookAction"
+		scope="prototype">
+		<property name="bookService" ref="bookService" />
+	</bean>
 </beans>

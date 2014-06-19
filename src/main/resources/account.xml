@@ -4,19 +4,20 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="account" extends="default">
-        <action name="login" class="loginAction">
-            <result type="redirect">/</result>
-            <result name="input">/login.jsp</result>
-        </action>
+	<package name="account" extends="default">
+		<action name="login" class="loginAction">
+			<result type="redirect">/</result>
+			<result name="input">/login.jsp</result>
+		</action>
 
-        <action name="register" class="registerAction">
-            <result type="redirect">/</result>
-            <result name="input">/register.jsp</result>
-        </action>
+		<action name="register" class="registerAction">
+			<result type="redirect">/</result>
+			<result name="input">/register.jsp</result>
+		</action>
 
-        <action name="logout" class="name.dohkoos.account.action.LogoutAction">
-            <result type="redirect">/</result>
-        </action>
-    </package>
+		<action name="logout"
+			class="com.goo.training.ssh.jbs.account.action.LogoutAction">
+			<result type="redirect">/</result>
+		</action>
+	</package>
 </struts>

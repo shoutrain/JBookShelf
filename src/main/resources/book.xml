@@ -4,12 +4,12 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="book" extends="default">
-        <action name="*Book" method="{1}" class="bookAction">
-            <result name="list">/books/list.jsp</result>
-            <result name="show">/books/show.jsp</result>
-            <result name="input">/books/form.jsp</result>
-            <result type="redirectAction">listBook</result>
-        </action>
-    </package>
+	<package name="book" extends="default">
+		<action name="*Book" method="{1}" class="bookAction">
+			<result name="list">/books/list.jsp</result>
+			<result name="show">/books/show.jsp</result>
+			<result name="input">/books/form.jsp</result>
+			<result type="redirectAction">listBook</result>
+		</action>
+	</package>
 </struts>
